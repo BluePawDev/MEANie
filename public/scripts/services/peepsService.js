@@ -20,4 +20,13 @@ myApp.service('PeepsService', function($http) {
       console.log(sv.allMyPeeps);
     });
   };
+
+    sv.deletePeeps = function(id) {
+      return $http({
+        method: 'DELETE',
+        url: '/peeps/' + id,
+      }).then(function() {
+        
+      });
+    }
 });

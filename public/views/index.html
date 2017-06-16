@@ -21,7 +21,8 @@
       <button ng-click='wmp.newPeep()'>Add</button>
       <button ng-click='wmp.whereMyPeepsAt()'>Read</button>
       <div ng-repeat="peeps in wmp.myPeeps">
-        <p>{{peeps.name}}{{peeps.location}}</p>
+        <p>{{peeps.name}}: {{peeps.location}} <button ng-click="wmp.remove($index)">Delete</button></p>
+
       </div>
     </div>
   </div>

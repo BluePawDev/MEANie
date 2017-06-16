@@ -8,9 +8,9 @@ myApp.controller('WhereMyPeeps', function($http, PeepsService) {
     var peepToAdd = {
       name: vm.nameIn,
       location: vm.locationIn
-    }; //end peepToAdd
+    }; // end peepToAdd
     PeepsService.addPeep(peepToAdd);
-  }; //end whereMyPeepsAt
+  }; // end whereMyPeepsAt
 
 
   vm.whereMyPeepsAt = function() {
@@ -19,5 +19,12 @@ myApp.controller('WhereMyPeeps', function($http, PeepsService) {
       console.log('back in controller:', PeepsService.allMyPeeps.data);
       vm.myPeeps = PeepsService.allMyPeeps.data;
     });
-  }; //end whereMyPeepsAt
+  }; // end whereMyPeepsAt
+
+  vm.remove = function(index) {
+    console.log('in remove');
+    var id = vm.myPeeps[index]._id;
+    PeepsService.deletePeeps(id);
+    vm.whereMyPeepsAt();
+  }
 }); // end controller

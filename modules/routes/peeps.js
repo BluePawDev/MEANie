@@ -36,4 +36,15 @@ router.post('/', function(req, res) {
   newRecord.save();
 });
 
+router.delete('/:id', function(req, res) {
+  var id = req.params.id;
+  peepsModel.remove( { _id: id }).then( function(err) {
+    if(!err) {
+      res.send("No error!");
+    } else {
+      res.send('error!');
+    }
+  });
+});
+
 module.exports = router;
