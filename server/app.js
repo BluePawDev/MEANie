@@ -1,5 +1,5 @@
 var express = require( 'express' );
-var app=express();
+var app = express();
 var path = require( 'path' );
 var bodyParser = require( 'body-parser' );
 var index = require( '../modules/routes/index.js' );
